@@ -1,0 +1,24 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /                           controllers.HomeController.index
+
+POST    /login                      controllers.AuthController.login()
+GET     /logout                     controllers.AuthController.logout()
+POST    /register                   controllers.AuthController.register()
+GET     /user/:user                 controllers.AuthController.userInfo(user: String)
+PUT     /user/:user                 controllers.AuthController.resetPassword(user: String)
+
+PUT     /cart/add                   controllers.CartController.addToCart
+PUT     /cart/remove                controllers.CartController.removeFromCart
+GET     /cart                       controllers.CartController.listCart
+
+GET     /checkout                   controllers.CartController.checkout
+
+GET     /products                   controllers.CatalogController.listProducts
+
+POST    /product                    controllers.CatalogController.createProduct()
+GET     /product/:id                controllers.CatalogController.readProduct(id: Integer)
+PUT     /product/:id                controllers.CatalogController.updateProduct(id: Integer)
+DELETE  /product/:id                controllers.CatalogController.deleteProduct(id: Integer)

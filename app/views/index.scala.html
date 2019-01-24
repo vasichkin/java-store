@@ -1,0 +1,50 @@
+@()
+<!doctype html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8">
+    <title>Web Development with Java course final application</title>
+  </head>
+
+  <body>
+    <h1>Store application</h1>
+
+    <p>
+    <h2> User operations:</h2>
+    <pre>
+    <code>
+POST    /login                      { email, password }         Login to store
+GET     <a href="/logout">/logout</a>                                                 Logout out of the store
+POST    /register                   { email, password }         Register new user
+GET     <a href="/user/testuser">/user/:user</a>                                             Get user info
+PUT     /user/:user                                             Reset password
+    </code>
+    </pre></p>
+
+    <p>
+    <h2> Cart operations:</h2>
+
+    <pre><code>
+PUT     /cart/add                   { productId, quantity }     Add products to cart
+PUT     /cart/remove                { productId, quantity }     Remove products from cart
+GET     <a href="/cart">/cart</a>                                                   List cart content
+GET     <a href="/checkout">/checkout</a>                                               Checkout
+    </code></pre></p>
+
+    <p>
+    <h2> Products operations:</h2>
+
+    <pre>
+    <code>
+GET     <a href="/products">/products</a>                                               List products
+POST    /product                    { id, title, stock, price}  Add product
+GET     <a href="/products/2411">/products:id</a>                                            Show product info
+PUT     /product/:id                { title, stock, price}      Change product details
+DELETE  /product/:id                                            Delete product
+    </code>
+    </pre>
+    </p>
+
+  </body>
+</html>
